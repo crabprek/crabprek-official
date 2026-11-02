@@ -1,319 +1,138 @@
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#260805">
-
-    <title>CRABPREK — Sambel Geprek</title>
-    <meta name="description" content="Nikmati Crabprek Sambel Geprek, kepiting dengan sambal geprek khas yang pedas dan gurih. Pesan sekarang!">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRABPREK — Premium Street Food Experience</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="[suspicious link removed]">
+  <link rel="preconnect" href="[suspicious link removed]" crossorigin>
+  <link href="[suspicious link removed]" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <a href="#home" class="brand">
-            <img src="assets/logo-crabprek.png" alt="Logo Crabprek">
-        </a>
-
-        <nav class="nav-links">
-            <a href="#home">Beranda</a>
-            <a href="#menu">Menu</a>
-            <a href="#about">Tentang Kami</a>
-            <a href="#location">Lokasi</a>
-        </nav>
-
-        <a class="nav-order"
-           href="https://wa.me/6282362129646"
-           target="_blank"
-           rel="noopener">
-            Pesan Sekarang ↗
-        </a>
-
-        <button class="menu-toggle" aria-label="Buka menu">
-            ☰
-        </button>
-    </header>
-
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero" id="home">
-
-            <div class="hero-content">
-                <span class="eyebrow">
-                    THE SIGNATURE CRAB EXPERIENCE
-                </span>
-
-                <h1>
-                    PEDASNYA<br>
-                    <span>NAMPOL.</span><br>
-                    RASANYA JUARA.
-                </h1>
-
-                <p class="hero-description">
-                    Perpaduan kepiting, sambal geprek khas,
-                    dan cita rasa gurih yang bikin nagih.
-                    Sekali coba, susah lupa.
-                </p>
-
-                <div class="hero-buttons">
-                    <a class="button button-primary"
-                       href="https://wa.me/6282362129646?text=Halo%20Crabprek,%20saya%20ingin%20memesan">
-                        Pesan Sekarang
-                        <span>↗</span>
-                    </a>
-
-                    <a class="button button-outline" href="#menu">
-                        Lihat Menu
-                    </a>
-                </div>
-
-                <div class="hero-note">
-                    <span>01</span>
-                    <p>Freshly prepared. Boldly seasoned.</p>
-                </div>
-            </div>
-
-
-            <!-- VISUAL KEPITING -->
-            <div class="hero-visual">
-
-                <div class="crab-glow"></div>
-
-                <!--
-                VIDEO ANIMASI KEPITING AKAN DIPASANG DI SINI.
-                Nama file: crab-walk.webm
-                Lokasi: assets/crab-walk.webm
-                -->
-
-                <video
-                    class="crab-animation"
-                    autoplay
-                    muted
-                    loop
-                    playsinline
-                    preload="metadata"
-                    poster="assets/crabprek-product.jpg">
-
-                    <source src="assets/crab-walk.webm" type="video/webm">
-                    <source src="assets/crab-walk.mp4" type="video/mp4">
-
-                </video>
-
-                <div class="visual-caption">
-                    <span>CRABPREK</span>
-                    <small>Made to satisfy your cravings.</small>
-                </div>
-
-            </div>
-
-
-            <div class="hero-bottom">
-                <div class="hero-feature">
-                    <span>✦</span>
-                    <div>
-                        <strong>Fresh Ingredients</strong>
-                        <small>Bahan pilihan berkualitas</small>
-                    </div>
-                </div>
-
-                <div class="hero-feature">
-                    <span>♨</span>
-                    <div>
-                        <strong>Signature Sambal</strong>
-                        <small>Pedas dan gurih khas Crabprek</small>
-                    </div>
-                </div>
-
-                <div class="hero-feature">
-                    <span>⌖</span>
-                    <div>
-                        <strong>Payakumbuh</strong>
-                        <small>Temukan lokasi kami</small>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-
-        <!-- MENU -->
-        <section class="menu-section" id="menu">
-
-            <div class="section-heading">
-                <span class="eyebrow">OUR SIGNATURE MENU</span>
-                <h2>One Menu. <span>Unforgettable Taste.</span></h2>
-                <p>
-                    Satu sajian istimewa dengan perpaduan
-                    rasa pedas, gurih, dan nikmat.
-                </p>
-            </div>
-
-
-            <article class="product-card">
-
-                <div class="product-image">
-                    <img
-                        src="assets/crabprek-product.jpg"
-                        alt="Crabprek Sambel Geprek dengan nasi, sambal, lalapan, dan tempe">
-                    <span class="product-tag">SIGNATURE</span>
-                </div>
-
-                <div class="product-info">
-                    <span class="product-category">CRABPREK ORIGINAL</span>
-
-                    <h3>Crabprek Sambel Geprek</h3>
-
-                    <p>
-                        Kepiting dengan sambal geprek khas,
-                        disajikan bersama nasi, lalapan,
-                        dan pelengkap yang menggugah selera.
-                    </p>
-
-                    <div class="product-bottom">
-                        <div>
-                            <small>Harga spesial</small>
-                            <strong>Rp18.000</strong>
-                        </div>
-
-                        <a
-                            href="https://wa.me/6282362129646?text=Halo%20Crabprek,%20saya%20ingin%20memesan%20Crabprek%20Sambel%20Geprek"
-                            target="_blank"
-                            rel="noopener">
-                            Pesan Menu ↗
-                        </a>
-                    </div>
-                </div>
-
-            </article>
-
-        </section>
-
-
-        <!-- ABOUT -->
-        <section class="about-section" id="about">
-
-            <div class="about-content">
-                <span class="eyebrow">MORE THAN JUST A MEAL</span>
-
-                <h2>
-                    Bukan Sekadar<br>
-                    <span>Pedas Biasa.</span>
-                </h2>
-
-                <p>
-                    Crabprek menghadirkan pengalaman menikmati
-                    kepiting dengan sambal geprek khas.
-                    Perpaduan rasa yang berani untuk kamu
-                    yang menyukai sensasi pedas dan gurih.
-                </p>
-
-                <a href="#menu" class="text-link">
-                    Jelajahi Menu Kami ↗
-                </a>
-            </div>
-
-        </section>
-
-
-        <!-- LOCATION -->
-        <section class="location-section" id="location">
-
-            <div class="section-heading">
-                <span class="eyebrow">COME AND FIND US</span>
-                <h2>Find Your Way <span>to Crabprek.</span></h2>
-                <p>
-                    Kami menantikan kedatanganmu.
-                </p>
-            </div>
-
-            <div class="location-card">
-
-                <div class="location-details">
-                    <span class="location-icon">⌖</span>
-
-                    <h3>CRABPREK</h3>
-
-                    <p>
-                        Taman Batang Agam,<br>
-                        Kecamatan Payakumbuh Barat,<br>
-                        Kota Payakumbuh, Sumatera Barat.
-                    </p>
-
-                    <p class="opening-hours">
-                        <strong>Jam operasional</strong><br>
-                        10.00 – 21.00 WIB
-                    </p>
-
-                    <a
-                        class="button button-primary"
-                        href="https://www.google.com/maps/search/?api=1&query=Crabprek+Taman+Batang+Agam+Payakumbuh"
-                        target="_blank"
-                        rel="noopener">
-                        Buka Petunjuk Lokasi ↗
-                    </a>
-                </div>
-
-                <div class="map-frame">
-                    <iframe
-                        src="https://maps.google.com/maps?q=Taman%20Batang%20Agam%2C%20Payakumbuh&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Peta lokasi Crabprek">
-                    </iframe>
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-brand">
-            <img src="assets/logo-crabprek.png" alt="Crabprek">
-            <p>Pedasnya Nampol, Rasanya Juara.</p>
-        </div>
-
-        <div class="footer-links">
-            <a href="#home">Beranda</a>
-            <a href="#menu">Menu</a>
-            <a href="#location">Lokasi</a>
-            <a href="https://instagram.com/crabprek/"
-               target="_blank"
-               rel="noopener">Instagram ↗</a>
-        </div>
-
-        <p class="copyright">
-            © 2026 CRABPREK. All rights reserved.
-        </p>
-    </footer>
-
-
-    <!-- WHATSAPP FLOATING BUTTON -->
-    <a
-        class="whatsapp-float"
-        href="https://wa.me/6282362129646"
-        target="_blank"
-        rel="noopener"
-        aria-label="Hubungi Crabprek melalui WhatsApp">
-        WA
+  <!-- Background Ambient Mesh -->
+  <div class="ambient-mesh"></div>
+
+  <!-- Glassmorphic Navbar -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <span class="brand-text">CRAB<span>PREK</span></span>
     </a>
+    <nav class="nav-links">
+      <a href="#hero">Beranda</a>
+      <a href="#menu">Menu Andalan</a>
+      <a href="#about">Cerita Kami</a>
+      <a href="#location">Lokasi</a>
+    </nav>
+    <a href="#order" class="nav-order-btn">
+      <span>Pesan Sekarang</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </header>
 
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="badge-eyebrow">
+        <span class="dot-pulsing"></span>
+        #1 CULINARY STREET FOOD
+      </div>
+      <h1>Sensasi Pedas <span>Kepiting Geprek</span> Legendaris.</h1>
+      <p class="hero-description">
+        Kelezatan daging kepiting segar pilihan dipadu dengan sambal resep rahasia yang menggugah selera. Nikmati sajian bumbu melimpah dengan kualitas rasa bintang lima.
+      </p>
+      
+      <div class="hero-cta-group">
+        <a href="#menu" class="btn btn-primary">
+          <span>Lihat Menu Populer</span>
+          <div class="btn-glow"></div>
+        </a>
+        <a href="#location" class="btn btn-secondary">Cari Cabang Terdekat</a>
+      </div>
 
-    <script src="js/script.js"></script>
+      <div class="hero-metrics">
+        <div class="metric-item">
+          <strong>15K+</strong>
+          <span>Porsi Terjual</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <strong>4.9 ★</strong>
+          <span>Rating Kepuasan</span>
+        </div>
+        <div class="metric-divider"></div>
+        <div class="metric-item">
+          <strong>100%</strong>
+          <span>Kepiting Segar</span>
+        </div>
+      </div>
+    </div>
 
+    <div class="hero-visual-stage">
+      <div class="orbital-ring ring-outer"></div>
+      <div class="orbital-ring ring-inner"></div>
+      <div class="visual-glow-aura"></div>
+      
+      <!-- Visual Center Image -->
+      <img src="images/hero-crab.png" alt="Crabprek Signature" class="hero-main-img" />
+
+      <!-- Floating Micro Badges -->
+      <div class="floating-badge badge-top">
+        <span class="badge-icon">🔥</span>
+        <div>
+          <strong>Super Pedas</strong>
+          <small>Level 1 - 10</small>
+        </div>
+      </div>
+
+      <div class="floating-badge badge-bottom">
+        <span class="badge-icon">👑</span>
+        <div>
+          <strong>Chef Recommended</strong>
+          <small>Best Seller #1</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <div class="section-header">
+      <span class="sub-title">CITA RASA ANGGUN</span>
+      <h2>Menu <span>Spesial Hari Ini</span></h2>
+      <p>Dibuat secara profesional dari bahan-bahan segar setiap harinya.</p>
+    </div>
+
+    <div class="product-grid">
+      <article class="product-card">
+        <div class="card-image-wrap">
+          <img src="images/crab-special.jpg" alt="Crabprek Jumbo" />
+          <span class="card-tag">FAVORIT</span>
+        </div>
+        <div class="card-content">
+          <span class="card-category">SIGNATURE DISH</span>
+          <h3>Crabprek Jumbo Saus Padang</h3>
+          <p>Kepiting jumbo 800g disiram saus padang kaya rempah pedas manis yang meresap hingga ke dalam serat daging.</p>
+          <div class="card-footer">
+            <div class="price">
+              <small>Mulai dari</small>
+              <strong>Rp 125.000</strong>
+            </div>
+            <button class="btn-order">Pesan</button>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Action -->
+  <a href="[suspicious link removed]" class="whatsapp-btn" target="_blank" aria-label="Chat WhatsApp">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.82.49 3.53 1.35 5L2 22l5.12-1.31A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm.05 16.5c-1.44 0-2.83-.37-4.06-1.07l-.29-.17-3.02.77.81-2.92-.19-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8.5-7.95 8.5z"/></svg>
+  </a>
+ <script src="script.js" defer></script>
 </body>
 </html>
