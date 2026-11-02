@@ -189,3 +189,69 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("CRABPREK website is ready!");
 
 });
+
+/* =========================================
+   CRABPREK — SCROLL STORYTELLING
+   ========================================= */
+
+(() => {
+    const hero = document.querySelector(".hero");
+    const visual = document.querySelector(".hero-visual");
+
+    if (!hero || !visual) return;
+
+    const reducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    if (reducedMotion) return;
+
+    let ticking = false;
+
+    function updateScrollAnimation() {
+        const rect = hero.getBoundingClientRect();
+        const heroHeight = hero.offsetHeight;
+        const viewportHeight = window.innerHeight;
+
+        // Progress scroll dari 0 sampai 1
+        const distance = Math.max(1, heroHeight - viewportHeight);
+        const progress = Math.min(
+            1,
+            Math.max(0, -rect.top / distance)
+        );
+
+        // Kirim progress ke CSS
+        visual.style.setProperty(
+            "--scroll-progress",
+            progress.toFixed(3)
+        );
+
+        // Efek perpindahan visual
+        visual.style.setProperty(
+            "--scroll-shift",
+            `${progress * -85}px`
+        );
+
+        visual.style.setProperty(
+            "--scroll-scale",
+            (1 + progress * 0.12).toFixed(3)
+        );
+
+        ticking = false;
+    }
+
+    function requestUpdate() {
+        if (!ticking) {
+            window.requestAnimationFrame(updateScrollAnimation);
+            ticking = true;
+        }
+    }
+
+    window.addEventListener("scroll", requestUpdate, {
+        passive: true
+    });
+
+    window.addEventListener("resize", requestUpdate);
+
+    updateScrollAnimation();
+})();

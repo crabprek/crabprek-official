@@ -1032,3 +1032,586 @@ img {
         transition-duration: 0.01ms !important;
     }
 }
+
+/* =========================================
+   CRABPREK — CINEMATIC VISUAL UPGRADE
+   ========================================= */
+
+/* GLOBAL */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: #160403;
+    background-image:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(120, 24, 12, 0.18),
+            transparent 60%
+        );
+}
+
+::selection {
+    background: #f3a51b;
+    color: #160403;
+}
+
+/* NAVIGATION */
+.navbar {
+    position: fixed;
+    height: 82px;
+    padding: 0 8%;
+    background: linear-gradient(
+        to bottom,
+        rgba(16, 3, 2, 0.94),
+        rgba(16, 3, 2, 0.55)
+    );
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.brand img {
+    width: 155px;
+    transition: transform 0.4s ease;
+}
+
+.brand:hover img {
+    transform: scale(1.05);
+}
+
+.nav-links a {
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+/* CINEMATIC HERO */
+.hero {
+    min-height: 920px;
+    padding: 160px 8% 45px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 45px;
+    background:
+        radial-gradient(
+            ellipse at 75% 45%,
+            rgba(210, 48, 19, 0.28),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 10% 15%,
+            rgba(116, 23, 13, 0.35),
+            transparent 45%
+        ),
+        linear-gradient(
+            125deg,
+            #160302,
+            #3a0b05 55%,
+            #190302
+        );
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 28px;
+}
+
+.hero h1 {
+    font-size: clamp(58px, 7vw, 104px);
+    line-height: 0.98;
+    letter-spacing: -4px;
+}
+
+.hero h1 span {
+    display: inline-block;
+    color: #e13b28;
+    text-shadow: 0 8px 35px rgba(225, 59, 40, 0.25);
+}
+
+.hero-description {
+    max-width: 440px;
+    margin-top: 30px;
+    font-size: 15px;
+    line-height: 2;
+}
+
+.hero-buttons {
+    margin-top: 38px;
+    gap: 16px;
+}
+
+.button {
+    min-height: 54px;
+    padding: 0 29px;
+    font-size: 13px;
+}
+
+.hero-note {
+    margin-top: 55px;
+}
+
+/* VISUAL STAGE */
+.hero-visual {
+    min-height: 590px;
+    isolation: isolate;
+}
+
+.hero-visual::before {
+    content: "";
+    position: absolute;
+    width: min(90%, 570px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(243, 165, 27, 0.16);
+    border-radius: 50%;
+    z-index: -1;
+    animation: stageRotate 35s linear infinite;
+}
+
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    width: min(72%, 440px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(243, 165, 27, 0.09);
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.crab-glow {
+    width: 90%;
+    background: radial-gradient(
+        circle,
+        rgba(232, 67, 24, 0.38),
+        rgba(180, 35, 13, 0.12) 48%,
+        transparent 72%
+    );
+    filter: blur(35px);
+    animation: glowPulse 5s ease-in-out infinite alternate;
+}
+
+.crab-animation {
+    max-width: 650px;
+    height: 550px;
+    transform-origin: center;
+    animation: crabFloat 6s ease-in-out infinite;
+}
+
+.visual-caption {
+    bottom: 25px;
+    right: 0;
+}
+
+/* HERO FEATURES */
+.hero-bottom {
+    margin-top: 40px;
+    padding: 30px 0;
+}
+
+.hero-feature {
+    transition: transform 0.3s ease;
+}
+
+.hero-feature:hover {
+    transform: translateY(-5px);
+}
+
+/* SECTION TRANSITIONS */
+.menu-section {
+    position: relative;
+    padding: 145px 8%;
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            rgba(171, 39, 18, 0.25),
+            transparent 60%
+        ),
+        #1c0503;
+}
+
+.section-heading {
+    margin-bottom: 75px;
+}
+
+.section-heading h2 {
+    font-size: clamp(38px, 5vw, 62px);
+    letter-spacing: -1.5px;
+}
+
+.section-heading p {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* PRODUCT SHOWCASE */
+.product-card {
+    max-width: 1120px;
+    min-height: 440px;
+    grid-template-columns: 1.15fr 0.85fr;
+    border-radius: 26px;
+    border-color: rgba(243, 165, 27, 0.25);
+    background: linear-gradient(
+        135deg,
+        #45160d,
+        #260804
+    );
+    box-shadow: 0 35px 100px rgba(0,0,0,0.35);
+    transition:
+        transform 0.5s ease,
+        box-shadow 0.5s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 45px 110px rgba(0,0,0,0.5);
+}
+
+.product-image {
+    min-height: 440px;
+    background:
+        radial-gradient(
+            circle,
+            rgba(226, 83, 32, 0.3),
+            transparent 70%
+        ),
+        #40150c;
+}
+
+.product-image img {
+    min-height: 440px;
+    transition: transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.product-info {
+    padding: 60px 48px;
+}
+
+.product-info h3 {
+    font-size: clamp(30px, 3vw, 42px);
+    letter-spacing: -1px;
+}
+
+.product-info > p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+/* ABOUT */
+.about-section {
+    position: relative;
+    padding: 155px 9%;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            ellipse at 50% 50%,
+            rgba(137, 29, 14, 0.25),
+            transparent 70%
+        ),
+        #190403;
+}
+
+.about-content {
+    max-width: 800px;
+}
+
+.about-content h2 {
+    font-size: clamp(45px, 6vw, 76px);
+    letter-spacing: -2px;
+}
+
+.about-content p {
+    font-size: 15px;
+}
+
+/* LOCATION */
+.location-section {
+    padding: 130px 8%;
+    background: #160403;
+}
+
+.location-card {
+    max-width: 1120px;
+    border-radius: 24px;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.25);
+}
+
+.location-details {
+    padding: 55px 45px;
+}
+
+/* FOOTER */
+.footer {
+    padding: 75px 8% 30px;
+    background: #100302;
+}
+
+.footer-links {
+    gap: 35px;
+}
+
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOTION */
+@keyframes crabFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+    }
+    50% {
+        transform: translateY(-16px) rotate(1deg);
+    }
+}
+
+@keyframes glowPulse {
+    from {
+        opacity: 0.55;
+        transform: scale(0.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+@keyframes stageRotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* TABLET */
+@media (max-width: 950px) {
+    .hero {
+        min-height: auto;
+        padding-top: 145px;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 6vw, 68px);
+        letter-spacing: -2px;
+    }
+
+    .hero-visual {
+        min-height: 430px;
+    }
+
+    .crab-animation {
+        height: 420px;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .navbar {
+        height: 75px;
+        padding: 0 6%;
+    }
+
+    .hero {
+        padding: 130px 7% 35px;
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .hero h1 {
+        font-size: clamp(48px, 13vw, 68px);
+        letter-spacing: -2px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-visual {
+        min-height: 340px;
+    }
+
+    .crab-animation {
+        height: 330px;
+    }
+
+    .menu-section,
+    .location-section {
+        padding: 90px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 36px;
+    }
+
+    .product-card {
+        grid-template-columns: 1fr;
+    }
+
+    .product-image,
+    .product-image img {
+        min-height: 300px;
+    }
+
+    .product-info {
+        padding: 35px 27px;
+    }
+
+    .about-section {
+        padding: 100px 7%;
+    }
+
+    .about-content h2 {
+        font-size: 44px;
+    }
+
+    .location-details {
+        padding: 35px 28px;
+    }
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    .crab-animation,
+    .crab-glow,
+    .hero-visual::before {
+        animation: none !important;
+    }
+
+    .reveal {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =========================================
+   SCROLL-DRIVEN VISUAL EFFECT
+   ========================================= */
+
+.hero-visual {
+    --scroll-progress: 0;
+    --scroll-shift: 0px;
+    --scroll-scale: 1;
+}
+
+/* Kepiting bergerak mengikuti scroll */
+.hero-visual .crab-animation {
+    animation: none;
+
+    transform:
+        translate3d(
+            0,
+            var(--scroll-shift),
+            0
+        )
+        scale(var(--scroll-scale));
+
+    transform-origin: center center;
+    transition: filter 0.2s ease;
+    will-change: transform;
+}
+
+/* Cahaya ikut berubah saat scroll */
+.hero-visual .crab-glow {
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Efek tambahan pada area visual */
+.hero-visual {
+    perspective: 1000px;
+}
+
+/* Penyesuaian untuk layar HP */
+@media (max-width: 768px) {
+    .hero-visual .crab-animation {
+        transform:
+            translate3d(
+                0,
+                var(--scroll-shift),
+                0
+            )
+            scale(var(--scroll-scale));
+    }
+}
+
+/* Pengaturan untuk pengguna yang mengurangi animasi */
+@media (prefers-reduced-motion: reduce) {
+    .hero-visual .crab-animation {
+        animation: none;
+        transform: none;
+        will-change: auto;
+    }
+}
+
+/* =========================================
+   CRABPREK — SCROLL-DRIVEN ANIMATION
+   ========================================= */
+
+/* Nilai awal yang dikirim dari JavaScript */
+.hero-visual {
+    --scroll-progress: 0;
+    --scroll-shift: 0px;
+    --scroll-scale: 1;
+}
+
+/* Gerakan kepiting mengikuti scroll halaman */
+.hero-visual .crab-animation {
+    animation: none;
+
+    transform:
+        translate3d(
+            0,
+            var(--scroll-shift),
+            0
+        )
+        scale(var(--scroll-scale));
+
+    transform-origin: center center;
+    will-change: transform;
+
+    transition: filter 0.2s ease;
+}
+
+/* Efek cahaya di belakang kepiting */
+.hero-visual .crab-glow {
+    pointer-events: none;
+}
+
+/* Menjaga animasi tetap nyaman di perangkat kecil */
+@media (max-width: 768px) {
+    .hero-visual .crab-animation {
+        transform:
+            translate3d(
+                0,
+                calc(var(--scroll-shift) * 0.5),
+                0
+            )
+            scale(var(--scroll-scale));
+    }
+}
+
+/* Menghormati pengaturan reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .hero-visual .crab-animation {
+        animation: none;
+        transform: none;
+        will-change: auto;
+    }
+}
