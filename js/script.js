@@ -1,25 +1,191 @@
-const WA_NUMBER = "6282362129646";
-const PRODUCT_NAME = "Crabprek Sambel Geprek";
-const UNIT_PRICE = 18000;
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
-  const links = document.getElementById("nav-links");
-  const closeMenu = () => { links?.classList.remove("open"); toggle?.setAttribute("aria-expanded", "false"); if (toggle) toggle.textContent = "☰"; };
-  toggle?.addEventListener("click", () => { const open = links.classList.toggle("open"); toggle.setAttribute("aria-expanded", String(open)); toggle.textContent = open ? "×" : "☰"; });
-  links?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
-  document.addEventListener("click", e => { if (links && toggle && !links.contains(e.target) && !toggle.contains(e.target)) closeMenu(); });
-  const year = document.getElementById("year"); if (year) year.textContent = new Date().getFullYear();
-  const qty = document.getElementById("quantity"), total = document.getElementById("total-price");
-  const rupiah = n => new Intl.NumberFormat("id-ID", {style:"currency",currency:"IDR",maximumFractionDigits:0}).format(n);
-  const count = () => Math.min(99, Math.max(1, Number.parseInt(qty?.value || "1", 10) || 1));
-  const update = () => { if (!qty || !total) return; qty.value = count(); total.textContent = rupiah(count() * UNIT_PRICE); };
-  qty?.addEventListener("input", update);
-  document.getElementById("minus")?.addEventListener("click", () => { qty.value = Math.max(1, count()-1); update(); });
-  document.getElementById("plus")?.addEventListener("click", () => { qty.value = Math.min(99, count()+1); update(); }); update();
-  document.getElementById("order-form")?.addEventListener("submit", e => {
-    e.preventDefault(); const name = document.getElementById("customer-name").value.trim(); if (!name) return;
-    const quantity = count(), note = document.getElementById("note").value.trim();
-    const message = ["Halo Admin CRABPREK! Saya ingin memesan:", "", `Nama: ${name}`, `Pesanan: ${PRODUCT_NAME}`, `Jumlah: ${quantity} porsi`, `Harga satuan: ${rupiah(UNIT_PRICE)}`, `Estimasi total: ${rupiah(quantity * UNIT_PRICE)}`, note ? `Catatan: ${note}` : "", "", "Mohon konfirmasi ketersediaan dan detail pesanan. Terima kasih!"].filter(Boolean).join("\n");
-    window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
-  });
+
+/* =========================================
+   CRABPREK — WEBSITE INTERACTIONS
+========================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    // =====================================
+    // MOBILE NAVIGATION
+    // =====================================
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const navItems = document.querySelectorAll(".nav-links a");
+
+    if (menuToggle && navLinks) {
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+
+            menuToggle.textContent = isOpen ? "✕" : "☰";
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+        // Tutup menu setelah pengunjung memilih halaman
+        navItems.forEach(function (item) {
+
+            item.addEventListener("click", function () {
+
+                navLinks.classList.remove("active");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            });
+
+        });
+
+        // Tutup menu jika pengunjung klik di luar navigasi
+        document.addEventListener("click", function (event) {
+
+            const clickedInsideMenu =
+                navLinks.contains(event.target) ||
+                menuToggle.contains(event.target);
+
+            if (!clickedInsideMenu) {
+
+                navLinks.classList.remove("active");
+                menuToggle.textContent = "☰";
+                menuToggle.setAttribute("aria-expanded", "false");
+
+            }
+
+        });
+
+    }
+
+
+    // =====================================
+    // REVEAL ANIMATION ON SCROLL
+    // =====================================
+
+    const revealElements = document.querySelectorAll(
+        ".section-heading, .product-card, .about-content, .location-card"
+    );
+
+    if ("IntersectionObserver" in window) {
+
+        const revealObserver = new IntersectionObserver(
+            function (entries, observer) {
+
+                entries.forEach(function (entry) {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("is-visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        revealElements.forEach(function (element) {
+
+            element.classList.add("reveal");
+            revealObserver.observe(element);
+
+        });
+
+    }
+
+
+    // =====================================
+    // VIDEO ANIMATION
+    // =====================================
+
+    const crabVideo = document.querySelector(".crab-animation");
+
+    if (crabVideo) {
+
+        crabVideo.addEventListener("error", function () {
+
+            console.warn(
+                "Video kepiting belum tersedia. Pastikan crab-walk.webm atau crab-walk.mp4 berada di folder assets."
+            );
+
+        });
+
+        // Memastikan video diputar tanpa suara
+        crabVideo.muted = true;
+
+        const playVideo = crabVideo.play();
+
+        if (playVideo !== undefined) {
+
+            playVideo.catch(function (error) {
+
+                console.info(
+                    "Browser membatasi autoplay video:",
+                    error
+                );
+
+            });
+
+        }
+
+    }
+
+
+    // =====================================
+    // SMOOTH NAVIGATION
+    // =====================================
+
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+
+        link.addEventListener("click", function (event) {
+
+            const targetId = this.getAttribute("href");
+
+            if (!targetId || targetId === "#") return;
+
+            const target = document.querySelector(targetId);
+
+            if (target) {
+
+                event.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+
+        });
+
+    });
+
+
+    // =====================================
+    // FOOTER YEAR
+    // =====================================
+
+    const copyright = document.querySelector(".copyright");
+
+    if (copyright) {
+
+        copyright.textContent =
+            "© " + new Date().getFullYear() +
+            " CRABPREK. All rights reserved.";
+
+    }
+
+
+    console.log("CRABPREK website is ready!");
+
 });
