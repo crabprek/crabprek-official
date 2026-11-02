@@ -1,15 +1,22 @@
 # CRABPREK Website
-Paket website statis untuk GitHub Pages.
 
-- `index.html`: struktur dan konten
-- `css/style.css`: desain dark-gold responsif
-- `js/script.js`: menu mobile, preloader, kalkulasi total, dan WhatsApp order
-- `assets/crabprek-product.jpg`: letakkan foto produk asli di sini
+Website statis CRABPREK dengan identitas merah cabai, merah bata, dan krem hangat.
 
-## Sebelum publish
-1. Tambahkan foto produk asli dengan nama `crabprek-product.jpg` ke folder `assets`.
-2. Periksa kembali lokasi operasional dan jam buka.
-3. Tes `index.html` di browser.
-4. Commit dan push file ke repository GitHub yang mengaktifkan GitHub Pages.
+## Struktur
+- `index.html` — halaman utama
+- `css/style.css` — desain responsif dan animasi maskot kepiting
+- `js/script.js` — navigasi mobile, kalkulasi pesanan, dan WhatsApp
+- `assets/crabprek-logo.png` — logo CRABPREK transparan
+- `assets/crabprek-product.jpg` — foto produk
 
-Harga dikonfigurasi pada `UNIT_PRICE` di `js/script.js`. Website ini mengirim detail pesanan ke WhatsApp; konfirmasi tetap dilakukan admin.
+## Menjalankan
+Buka folder ini di VS Code, klik kanan `index.html`, lalu pilih **Open with Live Server**.
+
+## Detail yang sudah diatur
+- Harga: Rp18.000 per porsi
+- WhatsApp: +62 823-6212-9646
+- Instagram: @crabprek
+- Lokasi peta: Apple Maps: https://maps.apple.com/p/QgzE_Q5JeZ5mEP
+- Jam yang ditampilkan: 10.00–21.00 WIB (konfirmasi hari operasional melalui WhatsApp)
+
+Jika alamat titik toko berbeda dari area Taman Batang Agam, ganti URL Google Maps di bagian `#location` pada `index.html` dengan tautan pin lokasi yang tepat.
